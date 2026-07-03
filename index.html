@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Valvulando</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <h1>Valvulando</h1>
+        <nav>
+            <button data-secao="catalogo">Catálogo</button>
+            <button data-secao="inventario">Inventário</button>
+            <button data-secao="sobre">Sobre</button>
+        </nav>
+    </header>
+    <main>
+        <section id="catalogo">
+            <div class="controles">
+                <select name="filtro" id="filtro-categoria">
+                    <option value="">Todos</option>
+                </select>
+                <button class="btn-primario" id="btn-abrir-modal">Adicionar Pedal</button>
+            </div>
+
+            <!-- Modal: Adicionar pedal -->
+            <dialog id="modal-pedal">
+                <h2>Adicionar Pedal</h2>
+                <form id="form-pedal">
+                    <label for="nome">Nome:</label>
+                    <input type="text" id="nome" name="nome" required>
+                    <label for="descricao">Descrição:</label>
+                    <input type="text" id="descricao" name="descricao" required>
+                    <label for="categoria">Categoria:</label>
+                    <select name="categoria" id="categoria" required>
+                        <option value="">Selecione uma categoria</option>
+                    </select>
+                    <label for="imagem">Imagem (URL):</label>
+                    <input type="text" id="imagem" name="imagem">
+                    <div class="acoes-modal">
+                        <button type="button" class="btn-secundario" id="btn-cancelar-modal">Cancelar</button>
+                        <button type="submit" class="btn-primario">Salvar</button>
+                    </div>
+                </form>
+            </dialog>
+
+            <!-- Modal: Editar pedal -->
+            <dialog id="modal-editar">
+                <h2>Editar Pedal</h2>
+                <form id="form-editar">
+                    <input type="hidden" id="editar-id">
+                    <label for="editar-nome">Nome:</label>
+                    <input type="text" id="editar-nome" required>
+                    <label for="editar-descricao">Descrição:</label>
+                    <input type="text" id="editar-descricao" required>
+                    <label for="editar-categoria">Categoria:</label>
+                    <select id="editar-categoria" required>
+                        <option value="">Selecione uma categoria</option>
+                    </select>
+                    <label for="editar-imagem">Imagem (URL):</label>
+                    <input type="text" id="editar-imagem">
+                    <div class="acoes-modal">
+                        <button type="button" class="btn-secundario" id="btn-cancelar-editar">Cancelar</button>
+                        <button type="submit" class="btn-primario">Salvar</button>
+                    </div>
+                </form>
+            </dialog>
+
+            <div id="lista-pedais" class="grid-cards"></div>
+        </section>
+
+        <section id="inventario">
+            <div id="lista-inventario" class="grid-cards"></div>
+        </section>
+
+        <section id="sobre">
+            <h2>Sobre o Valvulando</h2>
+            <p>Valvulando faz parte do projeto MVP do curso de Pós-Graduação da PUC-Rio Desenvolvimento FullStack. Ele
+                nasceu com o propósito de gerenciar o catálogo de pedais de guitarra e o inventário de guitarristas.</p>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

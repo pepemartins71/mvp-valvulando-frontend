@@ -1,0 +1,308 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-image: url('imgs/valvulando-bg.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    font-family: system-ui, -apple-system, sans-serif;
+    color: #F0EDE8;
+    min-height: 100vh;
+}
+
+/* HEADER */
+header {
+    background-color: rgba(15, 15, 15, 0.92);
+    border-bottom: 2px solid #E8A020;
+    padding: 1rem 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+header h1 {
+    font-size: 1.8rem;
+    color: #E8A020;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+nav {
+    display: flex;
+    gap: 0.5rem;
+}
+
+nav button {
+    background: transparent;
+    border: 1px solid #E8A020;
+    color: #F0EDE8;
+    padding: 0.4rem 1.2rem;
+    border-radius: 4px;
+    cursor: pointer;
+    font-family: inherit;
+    font-size: 0.9rem;
+    transition: background 0.2s, color 0.2s;
+}
+
+nav button:hover,
+nav button.ativo {
+    background: #E8A020;
+    color: #0F0F0F;
+    font-weight: 600;
+}
+
+/* MAIN / SEÇÕES */
+main {
+    padding: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+section {
+    display: none;
+}
+
+section.ativa {
+    display: block;
+}
+
+/* CONTROLES */
+.controles {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.controles select {
+    background: rgba(15, 15, 15, 0.85);
+    border: 1px solid #E8A020;
+    color: #F0EDE8;
+    padding: 0.4rem 0.8rem;
+    border-radius: 4px;
+    font-family: inherit;
+    cursor: pointer;
+}
+
+/* BOTÕES GERAIS */
+.btn-primario {
+    background: #E8A020;
+    color: #0F0F0F;
+    border: none;
+    padding: 0.5rem 1.2rem;
+    border-radius: 4px;
+    font-family: inherit;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.btn-primario:hover {
+    background: #C47F10;
+}
+
+.btn-perigo {
+    background: transparent;
+    color: #C0392B;
+    border: 1px solid #C0392B;
+    padding: 0.3rem 0.8rem;
+    border-radius: 4px;
+    font-family: inherit;
+    font-size: 0.8rem;
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s;
+}
+
+.btn-perigo:hover {
+    background: #C0392B;
+    color: #F0EDE8;
+}
+
+.btn-secundario {
+    background: transparent;
+    color: #A09890;
+    border: 1px solid #A09890;
+    padding: 0.3rem 0.8rem;
+    border-radius: 4px;
+    font-family: inherit;
+    font-size: 0.8rem;
+    cursor: pointer;
+    transition: border-color 0.2s, color 0.2s;
+}
+
+.btn-secundario:hover {
+    border-color: #F0EDE8;
+    color: #F0EDE8;
+}
+
+/* GRID DE CARDS */
+.grid-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 1.2rem;
+}
+
+/* CARD DE PEDAL */
+.card-pedal {
+    background: rgba(15, 15, 15, 0.85);
+    border: 1px solid #333;
+    border-radius: 8px;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    transition: border-color 0.2s, transform 0.2s;
+}
+
+.card-pedal:hover {
+    border-color: #E8A020;
+    transform: translateY(-2px);
+}
+
+.card-pedal img {
+    width: 100%;
+    height: 140px;
+    object-fit: cover;
+    border-radius: 4px;
+    background: #1a1a1a;
+}
+
+.card-pedal h3 {
+    font-size: 1rem;
+    color: #E8A020;
+}
+
+.card-pedal p {
+    font-size: 0.85rem;
+    color: #A09890;
+    flex-grow: 1;
+}
+
+.card-pedal .categoria-tag {
+    font-size: 0.75rem;
+    background: #1a1a1a;
+    border: 1px solid #333;
+    padding: 0.2rem 0.5rem;
+    border-radius: 20px;
+    color: #A09890;
+    align-self: flex-start;
+}
+
+.card-pedal .acoes {
+    display: flex;
+    gap: 0.5rem;
+    margin-top: 0.5rem;
+    padding-right: 0.3rem;
+    flex-wrap: wrap;
+}
+
+/* MODAL (dialog) */
+dialog {
+    background: #1a1a1a;
+    border: 1px solid #E8A020;
+    border-radius: 8px;
+    padding: 2rem;
+    color: #F0EDE8;
+    width: 100%;
+    max-width: 440px;
+}
+
+dialog::backdrop {
+    background: rgba(0, 0, 0, 0.7);
+}
+
+dialog h2 {
+    color: #E8A020;
+    margin-bottom: 1.2rem;
+    font-size: 1.1rem;
+}
+
+dialog form {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+}
+
+dialog label {
+    font-size: 0.85rem;
+    color: #A09890;
+}
+
+dialog input,
+dialog select,
+dialog textarea {
+    background: #0F0F0F;
+    border: 1px solid #333;
+    color: #F0EDE8;
+    padding: 0.5rem 0.8rem;
+    border-radius: 4px;
+    font-family: inherit;
+    font-size: 0.9rem;
+    width: 100%;
+    transition: border-color 0.2s;
+}
+
+dialog input:focus,
+dialog select:focus,
+dialog textarea:focus {
+    outline: none;
+    border-color: #E8A020;
+}
+
+dialog .acoes-modal {
+    display: flex;
+    gap: 0.8rem;
+    margin-top: 0.5rem;
+    justify-content: flex-end;
+}
+
+/* FEEDBACK DE ERRO/SUCESSO */
+.mensagem {
+    padding: 0.6rem 1rem;
+    border-radius: 4px;
+    font-size: 0.85rem;
+    margin-bottom: 1rem;
+}
+
+.mensagem.erro {
+    background: rgba(192, 57, 43, 0.2);
+    border: 1px solid #C0392B;
+    color: #e74c3c;
+}
+
+.mensagem.sucesso {
+    background: rgba(39, 174, 96, 0.2);
+    border: 1px solid #27ae60;
+    color: #2ecc71;
+}
+
+/* SEÇÃO SOBRE */
+#sobre {
+    background: rgba(15, 15, 15, 0.85);
+    border-radius: 8px;
+    padding: 2rem;
+    max-width: 600px;
+    border: 1px solid #333;
+}
+
+/* RESPONSIVIDADE */
+@media (max-width: 600px) {
+    header {
+        flex-direction: column;
+        gap: 1rem;
+        text-align: center;
+    }
+
+    main {
+        padding: 1rem;
+    }
+}
